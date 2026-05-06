@@ -1,18 +1,58 @@
-# React + Vite
+# React Movie App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A movie search and favorites app built with React and the OMDB API.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Search movies by title
+- Add / remove movies from favorites
+- Favorites saved in localStorage
+- Responsive design with Tailwind CSS
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- React
+- React Router DOM
+- Tailwind CSS
+- OMDB API
+- Context API
 
-Note: This will impact Vite dev & build performances.
+## Getting Started
 
-## Expanding the ESLint configuration
+### 1. Clone the repository
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+git clone https://github.com/pris1345/Movie_search.git
+
+### 2. Install dependencies
+
+npm install
+
+### 3. Create .env file in root
+
+VITE_API_KEY=your_omdb_api_key_here
+
+### 4. Run the app
+
+npm run dev
+
+## 🔑 Get OMDB API Key
+
+1. Go to [https://www.omdbapi.com/apikey.aspx](https://www.omdbapi.com/apikey.aspx)
+2. Sign up for free
+3. Check your email for the API key
+4. Paste it in your `.env` file
+
+## 📁 Project Structure
+
+src/
+├── components/
+│ ├── Navbar.jsx
+│ └── MovieCard.jsx
+├── contexts/
+│ └── MovieContext.jsx
+├── pages/
+│ ├── Home.jsx
+│ └── Favorites.jsx
+├── services/
+│ └── api.js
+└── App.jsx
