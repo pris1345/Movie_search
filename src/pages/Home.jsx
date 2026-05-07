@@ -1,6 +1,6 @@
 import MovieCard from "../components/MovieCard";
 import { useState, useEffect } from "react";
-import { searchMovies, getMovieDetails } from "../services/api";
+import { searchMovies } from "../services/api";
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [movies, setMovies] = useState([]);
@@ -34,15 +34,8 @@ function Home() {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-
     if (!searchQuery.trim()) return;
-
-    setLoading(true);
-
-    const results = await searchMovies(searchQuery);
-    setMovies(results);
-
-    setLoading(false);
+    loadMovies(searchQuery);
   };
 
   return (
@@ -66,9 +59,13 @@ function Home() {
 
       {!loading && !error && (
         <div className="flex flex-wrap justify-center gap-6">
-          {movies.map((movie) => (
+          {/* {movies.map((movie) => (
             <MovieCard key={movie.imdbID} movie={movie} />
-          ))}
+          ))} */}
+          {Array.isArray(movies) &&
+            movies.map((movie) => (
+              <MovieCard movie={movie} key={movie.imdbID} />
+            ))}
         </div>
       )}
     </div>

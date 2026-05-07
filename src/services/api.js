@@ -8,11 +8,12 @@ export const searchMovies = async (query) => {
   return data;
 };
 
-export const getMovieDetails = async (id) => {
+export const getMovieDetails = async (imdbID) => {
   const response = await fetch(
-    `${BASE_URL}?apikey=${API_KEY}&i=${id}&plot=full`
+    `${BASE_URL}?apikey=${API_KEY}&i=${imdbID}&plot=full`
   );
 
   const data = await response.json();
   return data;
 };
+
